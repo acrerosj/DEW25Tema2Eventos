@@ -25,6 +25,9 @@
 
         const ul = document.querySelector('ul');
 
+        // Se pueden añadir eventos de muchas formas:
+
+        // - Al crear el elemento
         listaCompra.forEach(item => {
             const li = document.createElement('li');
             li.textContent = item;
@@ -34,6 +37,7 @@
             });
         });
 
+        // - Añadiendo funcionalidad una vez creados.
         function addEventBold() {
             const items = ul.querySelectorAll('li');
             items.forEach(li => 
@@ -46,6 +50,7 @@
 
         document.querySelector('button').addEventListener('click', addEventBold);
 
+        // - Dando el evento al padre y comprobando si el target es del tipo al que se quiera dar la funcionalidad.
         ul.addEventListener('click', (event) => {
             console.log(event.target.tagName);
             if (event.target.tagName === 'LI') {
