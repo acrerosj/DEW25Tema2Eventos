@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba1</title>
+    <style>
+        p {
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        div {
+            background-color: lightcoral;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Prueba 5</h1>
+    <div>
+
+        <p>
+            <button>Pulsar</button>
+        </p>
+    </div>
+    <script>
+
+        const boton = document.querySelector('button');
+        const parrafo = document.querySelector('p');
+        const div = document.querySelector('div');
+
+        // Con el parámetro true, la propagación va de fuera a dentro.
+
+        boton.addEventListener('click', () => console.log('Botón pulsado'), true);
+        parrafo.addEventListener('click', () => console.log('Párrafo pulsado'), true);
+        div.addEventListener('click', () => console.log('Div pulsado'), true);
+
+
+    </script>
+</body>
+
+</html>

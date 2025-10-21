@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prueba 5: Enlaces capturados</h1>
+    <ul>
+        <li>
+            <a href="https://ieslasgalletas.org">Las galletas</a>
+        </li>
+        <li>
+            <a href="https://google.es">Google</a>
+        </li>
+    </ul>
+    <form action="procesar.php" method="GET">
+        <input type="text" name="texto" id="" value="defecto">
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        const links = document.querySelectorAll('a');
+        const formulario = document.querySelector('form');
+        const inputTexto = formulario.querySelector('[name="texto"]');
+        
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                console.log(event.target.textContent);
+                event.preventDefault();
+            })
+        });
+
+
+        formulario.addEventListener('submit', (event) => {
+            console.log(inputTexto.value);
+            event.preventDefault();
+            if (inputTexto.value.length > 10 ) {
+                console.log('enviando formulario...');
+                formulario.submit();
+            }
+        });
+    </script> 
+</body>
+</html>
