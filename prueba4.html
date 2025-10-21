@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .destacado {
+            font-weight: bold;
+        }
+
+        .fondo {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba 4: Lista de la compra</h1>
+    <p>
+        <button>Añadir funcionalidad negrita</button>
+    </p>
+    <ul></ul>
+    <script>
+        const listaCompra = ['Vino', 'Cervezas', 'Ron', 'Ginebra', 'Agua', 'Hielo', 'Naranja'];
+
+        const ul = document.querySelector('ul');
+
+        listaCompra.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            ul.append(li);
+            li.addEventListener('click', (event) => {
+                console.log(event.target.textContent);
+            });
+        });
+
+        function addEventBold() {
+            const items = ul.querySelectorAll('li');
+            items.forEach(li => 
+                li.addEventListener('click', (event) => {
+                    event.target.classList.toggle('destacado');
+                    console.log("Cambiado destacado en: ", event.target.textContent);
+                })
+            );
+        }
+
+        document.querySelector('button').addEventListener('click', addEventBold);
+
+        ul.addEventListener('click', (event) => {
+            console.log(event.target.tagName);
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('fondo');
+            }
+        });
+    </script>
+</body>
+</html>
