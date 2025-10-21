@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Prueba 3: eventos de ventana</h3>
+    <p>ancho: <span id="width"></span></p>
+    <p>alto: <span id="height"></span></p>
+
+    <script>
+        const spanWidth = document.getElementById('width');
+        const spanHeight = document.getElementById('height');
+
+        window.addEventListener('resize', (event) => {
+            console.log("Redimensionando...");
+            spanWidth.textContent = window.innerWidth;
+            spanHeight.textContent = window.innerHeight;
+        });
+
+        spanWidth.textContent = window.innerWidth;
+        spanHeight.textContent = window.innerHeight;
+        
+    </script>
+</body>
+</html>
