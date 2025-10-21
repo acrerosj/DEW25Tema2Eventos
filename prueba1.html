@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba1</title>
+    <style>
+        p {
+            background-color: yellow;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba 1</h1>
+    <p>
+        <button>Pulsar</button>
+    </p>
+    <script>
+        function pulsar() {
+            console.log('boton doble click pulsado...');
+        }
+
+        const boton = document.querySelector('button');
+        const parrafo = document.querySelector('p');
+
+        boton.addEventListener('dblclick', pulsar);
+
+        boton.addEventListener('mouseenter', () => console.log('ratón dentro de botón'));
+
+        boton.addEventListener('mouseleave', () => console.log('ratón se fue fuera del botón'));
+
+        boton.addEventListener('click', (event) => {
+            console.log("click en boton", event);
+            event.stopPropagation();
+        });
+
+        parrafo.addEventListener('click', (event) => console.log("click en parrafo", event));
+
+    </script>
+</body>
+</html>
