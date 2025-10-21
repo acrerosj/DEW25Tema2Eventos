@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 40px;
+            border: 1px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Prueba2</h1>
+    <div id="exterior">
+        Exterior
+        <div id="media">
+            media
+            <div id="interior">
+                Interior
+                <button>Borrar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const divExterior = document.getElementById('exterior');
+        const divMedia = document.getElementById('media');
+        const divInterior = document.getElementById('interior');
+
+        divExterior.addEventListener('click', (event) =>{
+            console.log('Se hizo click en: ', event.target);
+            console.log('Pero el eventListener está en: ', event.currentTarget);
+            //event.target.remove();
+            event.currentTarget.remove();
+        });
+    </script>
+</body>
+</html>
